@@ -116,23 +116,26 @@
             z-index: 2;
         }
 
-        .login-logo-wrap {
-            width: 62px;
-            height: 62px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 28px;
-            border-radius: 16px;
-            background: rgba(255,255,255,0.96);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-        }
+.login-logo-wrap {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.96);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.24);
+    padding: 12px;
+}
 
-        .login-logo {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-        }
+.login-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
 
         .login-brand-title {
             margin: 0;
@@ -372,45 +375,110 @@
             background: #e2694a;
         }
 
-        @media (max-width: 760px) {
-            .login-shell {
-                min-height: auto;
-                grid-template-columns: 1fr;
-                border-radius: 20px;
-            }
 
-            .login-brand-panel {
-                min-height: 250px;
-                padding: 30px;
-            }
+@media (max-width: 760px) {
+    .login-shell {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        border-radius: 20px;
+    }
 
-            .login-brand-title {
-                font-size: 2.35rem;
-            }
+    .login-brand-panel {
+        min-height: 360px;
+        padding: 24px 22px;
+        justify-content: flex-start;
+    }
 
-            .login-brand-footer {
-                margin-top: 32px;
-            }
+    /* BIG LOGO — about 45% of mobile screen width */
+    .login-logo-wrap {
+        width: 45vw;
+        height: 45vw;
+        max-width: 210px;
+        max-height: 210px;
+        min-width: 150px;
+        min-height: 150px;
 
-            .login-form-panel {
-                padding: 34px 28px 30px;
-            }
-        }
+        margin: 0 auto 14px auto;
+        border-radius: 22px;
+        padding: 12px;
+        flex-shrink: 0;
+    }
 
-        @media (max-width: 420px) {
-            .login-form-panel {
-                padding: 30px 20px 24px;
-            }
+    .login-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 
-            .login-brand-panel {
-                padding: 26px 22px;
-            }
+    /* Smaller text underneath */
+    .login-brand-panel > .login-brand-content > .text-xs {
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+    }
 
-            .login-options {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-        }
+    .login-brand-title {
+        margin-top: 6px !important;
+        font-size: 1.7rem;
+        line-height: 1;
+    }
+
+    .login-accent-line {
+        width: 32px;
+        height: 2px;
+        margin-top: 7px;
+    }
+
+    .login-status-row {
+        margin-top: 12px;
+        font-size: 0.65rem;
+    }
+
+    .login-brand-footer {
+        margin-top: 20px;
+    }
+
+    .login-form-panel {
+        padding: 34px 28px 30px;
+    }
+}
+
+
+
+@media (max-width: 420px) {
+    .login-brand-panel {
+        min-height: 330px;
+        padding: 20px 18px;
+    }
+
+    /* Very large logo on small phones */
+    .login-logo-wrap {
+        width: 45vw;
+        height: 45vw;
+        max-width: 190px;
+        max-height: 190px;
+        min-width: 145px;
+        min-height: 145px;
+        margin-bottom: 12px;
+    }
+
+    .login-brand-title {
+        font-size: 1.55rem;
+    }
+
+    .login-status-row {
+        margin-top: 10px;
+    }
+
+    .login-form-panel {
+        padding: 30px 20px 24px;
+    }
+
+    .login-options {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -472,8 +540,8 @@
             <section class="login-brand-panel">
                 <div class="login-brand-content">
                     <div class="login-logo-wrap">
-                        <img src="data:image/jpeg;base64,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" alt="APM Terminals" class="login-logo" />
-                    </div>
+                        <img src="frontend\images\logo.png" alt="APM Terminals" class="login-logo" />
+                        </div>
 
                     <p class="text-xs font-bold uppercase tracking-[0.22em] text-[#e2694a]">Tyre Management</p>
                     <h1 class="login-brand-title mt-3">T M A <span>.</span></h1>
